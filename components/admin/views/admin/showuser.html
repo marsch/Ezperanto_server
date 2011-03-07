@@ -1,0 +1,42 @@
+<div class="info editbox" rel="/admin/app/edit/<%- user._id %>">
+    <div class="ico">
+    <img src="/ui/ico/24/organizations.png" alt="" />
+  </div> 
+  <h1 class="editable" rel="name">{user.name}</h1>
+  <div class="tags"></div> 
+  <ul class="users openbox" rel="/organizations/userselector/4cdd9423b4664a0b27330000">
+    <li rel="4cdd5cd8b4664af8262d0000" title="Mario"><img src="/thumbs/users/na.jpg" alt="" /></li>
+  </ul>
+</div>
+
+<div class="inner main-box"> 
+  <div class="bar">
+    <ul class="tabs">
+      <li rel="#tab-general"><a>General</a></li>
+      <li rel="#tab-permissions"><a>Permissions</a></li> 
+    </ul> 
+    <a class="button only-ico delete openbox" rel="/admin/users/delete/{user._id}"><img src="/ui/ico/16/delete.png" alt="" /></a>
+  </div>
+  
+  <div id="tab-general" class="box tab editbox" rel="/admin/users/edit/{user._id}">
+    <div class="column">
+      <h2>General</h2> 
+      <dl>
+          <dt>Email</dt>
+          <dd rel="email">{user.email}</dd>
+          <dt>Password</dt>
+          <dd rel="pass">{user.pass}</dd>
+      </dl> 
+      </div>
+    <div class="clear"></div>
+  </div> 
+  <div id="tab-permissions" class="box tab editbox" rel="/admin/users/edit/{user._id}">
+ 
+    <h2>Permissions</h2>
+    <dl>
+        <dt>Permissions</dt>
+        <dd rel="permissions">{user.permissions}</dd> 
+    </dl> 
+    <div class="clear"></div>
+  </div>
+</div>

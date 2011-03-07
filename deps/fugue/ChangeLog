@@ -1,0 +1,87 @@
+2010.12.22 v 0.0.38
+
+* disable PING/PONG debug code
+
+2010.11.09 v0.0.37
+
+* Removed pipe leaks between master and workers caused by constant pinging
+* Added test_pipe_leaks test
+
+2010.11.03 v0.0.36
+
+* Removed support for daemonizing
+
+2010.10.27 v0.0.35
+
+* Lots of fixes to daemonizing. Still does not work in MacOS, but I think this is not a big problem for now, since MacOS is not really used for production, just development.
+
+2010.10.22 v0.0.34
+
+* Added test for unix socket server.
+* Corrected unix socket server argument shifting.
+* Tested setuid inside test-sudo Makefile target.
+
+2010.10.20 v0.0.32
+
+* JSLint output is cleaner now
+
+2010.10.20 v0.0.31
+
+* Kill workers if they aren't dead after 30 seconds.
+* New option worker_kill_timeout - when master is stopping, time to let workers kill themselves before REALLY killing them (miliseconds). defaults to 30000 (30 seconds).
+* Throws Error instances instead of strings when something goes wrong.
+
+2010.10.11 v0.0.30
+
+* Protected worker killing from throwing an exception when the worker is no longer there, in order to not compromise the whole shutdown process.
+* Fixed some tests on linux. For some reason, linux has more process affinity and it's harder to make him balance between workers.
+
+2010.10.11 v0.0.29
+
+* fixed connection counting on the workers
+
+2010.10.11 v0.0.28
+
+* fixed a racing condition while shutting down the workers
+
+2010.10.11 v0.0.27
+
+* fixed a possible racing condition for access to master pid file when respawning
+
+2010.10.11 v0.0.26
+
+* Now uses carrier (http://github.com/pgte/carrier) as a way to implement line reading on protocol
+
+2010.10.06 v0.0.25
+
+* Fixed race condition between launching workers and asynchronous binding on master socket
+* On sudden master death, somehow the workers should eventually realize that their master has died and kill themselves.
+* added fugue.workerPids()
+* added options.worker_to_master_ping_interval
+* Worker notifies master that he is also listening, so master can more accurately count him in in order to invoke the options.started callback.
+
+2010.10.05 v0.0.22
+
+* Now workers file descriptors (stdin, stdout, stderr) are the same as the master process, so there is no longer the need to pipe them from worker into master.
+
+2010.10.05 v0.0.20
+
+* Fixed some important leaks that were preventing node to end after fugue.stop();
+* Added "started" callback to fugue.start();
+
+2010.10.03 v0.0.19
+
+* Reviewed the code that synchronously tries to fetch the file descriptor from the original master into the new respawned master (luismreis)
+* improved fugue.stop (pgte)
+* added test-fail target to test if tests are failing correctly on spawned test children processes (pgte)
+* reviewed teardown of some tests (pgte)
+
+2010.10.01 v0.0.15
+
+* Added tests: zero_workers, one_worker, i_can_reach_many_workers, app_reload (pgte);
+
+* Move verbose test out of log function and into configuration. If there's need to change logging at run time, then this code can be easily moved into a (new) function. (luismreis);
+
+* new fugue.stop() function (pgte);
+
+* options.verbose now defaults to false;

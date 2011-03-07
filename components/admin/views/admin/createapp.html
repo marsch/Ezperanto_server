@@ -1,0 +1,46 @@
+<h2>Add new application</h2>
+
+<form action="/admin/apps/create" method="post" class="ajax">
+    <fieldset>
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="name" value="" class="big required" />
+    </div> 
+    <div class="field">
+      <textarea name="description" class="reset">Description</textarea>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+    <h3>Vendor</h3>
+    <div class="field">
+      <input type="text" name="company" value="Company/Name" class="reset" />
+    </div>
+    <div class="field half">
+      <input type="text" name="phone" value="Phone" class="reset" />
+    </div>
+    
+    <div class="field half right">
+      <input type="text" name="fax" value="Fax" class="reset" />
+    </div>
+    
+    <div class="field">
+      <input type="text" name="website" value="WWW" class="reset" />
+    </div>
+    
+    <div class="field">
+      <textarea name="address" rows="2" class="reset">Address</textarea>
+    </div>
+  </fieldset>
+  
+  <input type="submit" name="save" value="Save" />
+</form>
+
+<script type="text/javascript">
+$('.openbox form').bind('complete', function(e, response) {
+  $('div.openbox').trigger('close');
+  
+  Browser.update(true);
+  ObjectPane.load(section+'/show/'+response._id);
+});
+</script>

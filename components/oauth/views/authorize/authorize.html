@@ -1,0 +1,29 @@
+<div id="authorize"> 
+    <h1>Authorize {app.name}</h1>  
+    Hi {user.name},<br/> The given application wants to:
+    <div class="clear"></div> 
+  <hr /> 
+    <form method="post" action="/authorize"> 
+    <p>
+        <ul>
+          {#scopes}
+          <li class="permission_list_item">
+            <div class="clearfix">
+              <img class="permission_icon" src="/ui/ico/48/{icon}.png" alt=""/>
+              <div class="permission_content">
+                <div class="permission_title">{title}</div>
+                <div class="permission_description">{description}</div>
+              </div>
+            </div>
+          </li>
+          {/scopes}
+          
+        </ul>
+    </p>   
+    <div class="clear"></div> 
+    <hr /> 
+    <input type="hidden" name="authorized" value="1" />
+    <input type="button" name="authorizebutton" value="Authorize" onclick=""/>&nbsp;or <a name="cancel_button" href="#">cancel</a>
+  </form> 
+  <div class="clear"></div>  
+</div>

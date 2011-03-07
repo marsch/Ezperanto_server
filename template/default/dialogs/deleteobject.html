@@ -1,0 +1,16 @@
+<h2>Really want to remove?</h2>
+<p>Information related to this will be lost</p>
+
+<input type="submit" name="delete" value="Remove" class="delete" />
+
+
+<script type="text/javascript">
+$('.openbox input').click(function() {
+    $('div.openbox').addClass('loading').empty();
+  $.post('{commit_url}', {'delete': true}, function() {
+    $('#object .ajax').fadeOut();
+    $('div.openbox').fadeOut(100);
+    $('#row-{object_id}').remove();
+  });
+});
+</script>

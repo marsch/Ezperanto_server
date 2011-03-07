@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>index</title> 
+  <meta name="author" content="Mario Scheliga">
+  
+  <script type="text/javascript" src="/ui/js/lib/jquery.js"></script>
+  <script type="text/javascript" src="/ui/js/lib/jquery.cookie.js"></script> 
+  <script type="text/javascript" src="/ui/js/lib/jquery-ui.js"></script>
+  <script type="text/javascript" src="/ui/js/lib/jquery.elastic.js"></script>
+  <script type="text/javascript" src="/ui/js/lib/jquery.autoheight.js"></script>
+  <script type="text/javascript" src="/ui/js/scripts.js"></script>
+ 
+  <link href="/ui/styles.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/ui/jquery-ui-1.8.6.custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" href="/ui/img/favicon.png" />
+</head>
+<body>
+  <div class="wide">
+    <div id="head">
+      <div class="logo">Ezperan.to by sourcegarden</div>
+      <ul class="mainnav"> 
+        {#mainmenu}{.|s}{~n}{/mainmenu}
+      </ul>
+      <div class="usernav">
+        {#usermenu}{.|s}{~n}{/usermenu} 
+      </div>
+      <!--<div class="search">
+        <input type="text" value="Search everything..." class="reset" />
+        <button />-->
+      </div>
+    </div> 
+    {#message}{.|s}{~n}{/message} 
+    {content}
+  </div>
+</body>
+</html>

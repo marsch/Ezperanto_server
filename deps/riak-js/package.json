@@ -1,0 +1,44 @@
+{
+   "name": "riak-js",
+   "version": "0.3.0beta5",
+   "description": "Riak client for node (HTTP + Protobuf)",
+   "keywords": [
+       "riak",
+       "node",
+       "async",
+       "nosql",
+       "database" 
+   ],
+   "maintainers": [
+       {
+           "name": "Francisco Treacy",
+           "email": "francisco.treacy@gmail.com",
+           "web": "http://franciscotreacy.com" 
+       },
+       {
+           "name": "rick (technoweenie)",
+           "web": "http://techno-weenie.net" 
+       }       
+   ],
+   "bugs": {
+       "web": "http://github.com/frank06/riak-js/issues" 
+   },
+   "licenses": [
+       {
+           "type": "MIT",
+           "url": "http://opensource.org/licenses/mit-license.php" 
+       } 
+   ],
+   "repositories": [
+       {
+           "type": "git",
+           "url": "git://github.com/frank06/riak-js.git" 
+       } 
+   ],
+   "directories": {
+       "lib": "./lib"
+   },
+   "os": [ "linux", "darwin" ],
+   "dependencies": {},
+   "engines": { "node": ">=0.1.97" }
+}

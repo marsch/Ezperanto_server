@@ -1,0 +1,16 @@
+<div id="login"> 
+  <h1>Login to UMCC</h1>
+  {message|s}
+  <form method="post" action="/login"> 
+      <label>Username</label> 
+      <input type="text" id="username" name="username" value="" /> 
+      <label>Password</label> 
+      <input type="password" name="password" /> 
+      <input type="submit" name="login" value="Login" /> 
+  </form> 
+  <div class="clear"></div> 
+  <hr /> 
+  <p>
+    <a href="/forgot">Forgot your password?</a>
+  </p>
+</div>

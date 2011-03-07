@@ -1,0 +1,93 @@
+<div class="info editbox" rel="/admin/app/edit/{app._id}">
+    <div class="ico">
+        <img src="/ui/ico/24/organizations.png" alt="" />
+    </div>
+    <h1 class="editable" rel="name">{app.name}</h1>
+    <div class="tags">
+    </div>
+    <ul class="users openbox" rel="/organizations/userselector/4cdd9423b4664a0b27330000">
+        <li rel="4cdd5cd8b4664af8262d0000" title="Mario">
+            <img src="/thumbs/users/na.jpg" alt="" />
+        </li>
+    </ul>
+</div>
+<div class="inner main-box">
+    <div class="bar">
+        <ul class="tabs">
+            <li rel="#tab-general">
+                <a>General</a>
+            </li>
+            <li rel="#tab-integration">
+                <a>Integration</a>
+            </li>
+            <li rel="#tab-service">
+                <a>Service</a>
+            </li>
+            <li rel="#tab-restrictions">
+                <a>Restrictions</a>
+            </li>
+        </ul>
+        <a class="button only-ico delete openbox" rel="/admin/apps/delete/{app._id}">
+        <img src="/ui/ico/16/delete.png" alt="" /></a>
+    </div>
+    <div id="tab-general" class="box tab editbox" rel="/admin/apps/edit/{app._id}">
+
+        <div class="column">
+            <h2>Description</h2>
+            <div class="description">
+                <p>
+                    {app.description}
+                </p>
+            </div>
+            <p class="options">
+                <a class="edit edit-description">Edit text</a>
+            </p>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="tab-integration" class="box tab editbox" rel="/admin/apps/edit/{app._id}">
+
+        <h2>General</h2>
+        <dl>
+            <dt>ID</dt><dd>{app._id}</dd>
+            <dt>Secret</dt><dd>{app.application_secret}</dd>
+            <dt>Launch URI</dt><dd rel="launch_uri">{app.launch_uri}</dd>
+        </dl>
+        <h2>Tab Integration</h2>
+        <dl>
+            <dt>Tab URI</dt><dd rel="tab_uri">{app.tab_uri}</dd>
+            <dt>Tab Name</dt><dd rel="tab_name">{app.tab_name}</dd>
+        </dl>
+        <h2>Configuration</h2>
+        <dl>
+            <dt>Dialog-URI</dt><dd rel="config_uri">{app.config_uri}</dd>
+            <dt>Callback-URI</dt><dd rel="config_callback">{app.config_callback}</dd>
+        </dl>
+        <h2>Authorization</h2>
+        <dl>
+            <dt>OAuth Redirect URI</dt><dd rel="auth_redirect_uri">{app.auth_redirect_uri}</dd>
+        </dl>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="tab-service" class="box tab editbox"  rel="/admin/apps/edit/{app._id}">
+        <h2>Service</h2>
+        <div class="column">
+            <dl>
+                <dt>Name</dt>
+                <dd rel="service_name">{app.service_name}</dd>
+                <dt>Endpoint URI</dt>
+                <dd rel="service_endpoint_uri">{app.service_endpoint_uri}</dd>
+            </dl>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="tab-restrictions" class="box tab">
+        <h2>Restrictions</h2>
+        <p>
+            User Restriction Setting goes here
+        </p>
+    </div>
+</div>

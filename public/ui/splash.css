@@ -1,0 +1,193 @@
+@font-face {
+	font-family: 'Droid Sans';
+	font-style: normal;
+	font-weight: bold;
+	src: local('Droid Sans'), url('fonts/bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Droid Sans';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Droid Sans'), url('fonts/normal.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #e5eaec url('img/bg.png') repeat-x top;
+	font-family: 'Lucida Grande', 'Segoe UI', 'Verdana', sans-serif;
+	font-size: 14px;
+	line-height: 1.3;
+	color: #555;
+	text-align: center;
+}
+
+#login, #authorize {
+	width: 440px;
+	margin: 10% auto 20px auto;
+	position: relative;
+	padding: 25px;
+	text-align: left;
+	overflow: hidden;
+	zoom: 1;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-border-image: url('img/box_shadow.png') 10 / 10px;
+	-webkit-border-image: url('img/box_shadow.png') 10 / 10px;
+}
+
+h1 {
+	font-family: Droid Sans, "Myriad Pro", Arial, Verdana, Helvetica;
+	font-size: 26px;
+	letter-spacing: -2px;
+	margin-bottom: 15px;
+	font-weight: normal;
+	color: #333;
+}
+
+button {
+	float: right;
+	background: url('img/button_small.png') repeat-x top;
+	font-family: arial, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 4px 6px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	color: #555;
+	cursor: pointer;
+	margin: 0 0 0 5px;
+}
+
+button:hover {
+	background-position: bottom;
+	border: 1px solid #777;
+	color: #ddd;
+}
+
+input[type=text], input[type=password] {
+	font-size: 16px;
+	font-weight: bold;
+	font-family: 'Lucida Grande', 'Segoe UI', 'Verdana', sans-serif;
+	color: #333;
+	padding: 4px;
+	border: 1px solid #bbb;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+#login label, #authorize label {
+  float: left;
+  width: 90px;
+  clear: left;
+  margin: 6px 0 0 0;
+}
+
+#login input, #authorize input {
+  width: 220px;
+  float: left;
+  clear: right;
+  margin: 0 0 8px 0;
+}
+
+#login input[type=submit], #authorize input[type=button] {
+	clear: both;
+	margin-left: 150px;
+	width: auto;
+}
+
+#login input[type=submit], #authorize input[type=button] {
+	background: url('img/button_green.png') repeat-x 0 -1px;
+	padding: 7px 12px;
+	color: #fff;
+	border: 1px solid #47cc06;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+#login input[type=submit], #authorize input[type=button]:hover {
+	background-position: 0 -39px;
+}
+
+#login p.error,#authorize p.error{
+  background: #f92872;
+  color: #fff;
+  margin: 0 -10px 20px -10px;
+  padding: 6px 10px 6px 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+#login hr,#authorize hr {
+  border: 0;
+  border-top: 1px dotted #ddd;
+  margin: 10px 0 10px 0;
+}
+
+
+a {
+	color: #11baf9;
+}
+
+a:hover {
+	color: #37d2ff;
+}
+
+
+#authorize ul {
+  list-style-type: none; 
+}
+
+.clearfix {
+  display:block;
+}
+.permission_list_item:first-child {
+  border-width: 0px;  
+}
+.permission_list_item { 
+  display:block; 
+  padding-top:10px;
+}
+.permission_icon {
+  display:block;
+  height:32px;
+  overflow:hidden;
+  padding-right:3px;
+  width:32px;
+  margin-right:5px;
+  float:left;
+  border: 0 none;
+}
+
+.permission_content {
+  padding-top: 1px;
+  display: table-cell;
+  vertical-align: top;
+  width: 100000px;
+}
+.permission_title {
+  padding-bottom: 2px;
+  line-height: 14px;
+  color: #333333;
+  font-size: 13px;
+  font-weight: bold;
+}
+.permission_description {
+  color: #808080;
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.clear {
+	clear: both;
+}

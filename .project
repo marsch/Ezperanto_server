@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>server</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.rockstarapps.jslint.JsLintBuilder</name>
+			<arguments>
+				<dictionary>
+					<key>buildAll</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>external_defines</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>properties</key>
+					<value>params = {passfail: false,debug: false,undef: false,white: true,evil: false,nomen: false,browser: false,cap: false,eqeqeq: true,widget: false,on: false,plusplus: true,sidebar: false,fragment: false,bitwise: true,rhino: false,laxbreak: false,regexp: true,safe: false,forin: false,onevar: true,adsafe: false,sub: false,strict: false,css: false,newcap: true,maxerrors:50,indent:4};</value>
+				</dictionary>
+				<dictionary>
+					<key>selection</key>
+					<value></value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+	</natures>
+</projectDescription>

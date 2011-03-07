@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+var connect = require('connect');
+
+//Needed for monit/upstart
+//Change directory into the script directory so includes resolve
+process.chdir(__dirname);
+
+var cli = require('./includes/umcc_cli');
+global.applications = [];
+applications['server'] = require('./includes/application');
+applications['oxconnector'] = require('../oxconnector/includes/application');
+applications['cucm'] = require('../ciscoipps/includes/application');
+
+ 
+ 
+var vhost_server = connect.createServer(connect.logger(), applications['server'].getAppHost(), applications['oxconnector'].getAppHost(), applications['cucm'].getAppHost());
+
+
+
+//vhost_server.listen(80);
+
+cli.proceed({server: vhost_server, port:80,host:"0.0.0.0",worker:1,master_log_file:"/var/log/umcc_log"});

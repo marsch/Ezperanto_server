@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+//Needed for monit/upstart
+//Change directory into the script directory so includes resolve
+process.chdir(__dirname);
+
+var cli = require('./includes/umcc_cli');
+global.application = require('./includes/application');
+
+cli.proceed({server: application.getWebServer(), port:3200,host:"0.0.0.0",worker:1,master_log_file:"/var/log/ox_umcc_log"});

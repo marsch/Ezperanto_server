@@ -1,0 +1,18 @@
+<h2>Add new user</h2>
+<form action="/admin/users/create" method="POST" class="ajax">
+  <fieldset>
+    <div class="field">
+      <label>Name</label>
+      <input type="text" name="name" value="" class="big required" />
+    </div> 
+      <div class="field">
+    <label>Email</label>
+      <input type="text" name="email" value="" class="big required" />
+    </div>
+      <div class="field">
+    <label>Password</label>
+      <input type="password" name="password" value="" class="big required" />
+    </div> 
+  </fieldset>
+  <input type="submit" name="save" value="Save" />
+</form>
