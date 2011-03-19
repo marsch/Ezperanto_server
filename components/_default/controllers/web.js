@@ -41,7 +41,8 @@ controller = function (spec) {
 	
 	
 	//overwrite common here?
-	that.start = function (req, res, next) {  
+	that.start = function (req, res, next) {   
+		console.log("######################## START ##############");
 		if (req.session.user_id) {
 			res.redirect('/user/apps');
 	    }

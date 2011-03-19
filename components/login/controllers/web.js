@@ -126,7 +126,7 @@ controller = function (spec) {
 		//check for superuser
 		if (req.body.username === applications['server'].getConfig().superuser) {
 			if (req.body.password === applications['server'].getConfig().superpass) {
-				//okay superuser is in place
+				//okay superuser is in place 
 				var user = {};
 				user.name = applications['server'].getConfig().superuser;
 				user._id = "SUPERUSER";
@@ -134,9 +134,10 @@ controller = function (spec) {
 				req.session.regenerate(function () {
 					// Store the user's primary key 
 					// in the session store to be retrieved,
-					// or in this case the entire user object
+					// or in this case the entire user object 
+					
 					req.user = user;
-					req.session.user_id = user._id; 
+					req.session.user_id = user._id;   
 					res.redirect('/');
 		        });
 			} else {

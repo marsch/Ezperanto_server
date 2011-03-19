@@ -71,7 +71,7 @@ controller = function (spec) {
 		});
 	}; 
 
-	that.onRequest = function (req, res, next) { 
+	that.onRequest = function (req, res, next) {  
 		that.gui.init(req, res);  
 		next(); 
 	};
