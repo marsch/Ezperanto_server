@@ -1,4 +1,4 @@
-var fugue = require('../deps/fugue');
+var fugue = require('fugue');
 var cli = require('../lib/sourcegarden/cli');
 
 umc_cli = function (specs) {

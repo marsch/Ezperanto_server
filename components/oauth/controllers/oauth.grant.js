@@ -1,4 +1,4 @@
-var dust = require('../../../deps/dust'),
+var dust = require('dust'),
 	_ = require("../../../lib/underscore/underscore"),
 	webcontroller = require("../../core/controllers/webcontroller"), 
 	oauthmodel = require("../lib/oauth.model"),  

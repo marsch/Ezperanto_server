@@ -1,5 +1,5 @@
 
-var dust = require('../../../deps/dust'),
+var dust = require('dust'),
 	_ = require("../../../lib/underscore/underscore"),
 	usercontroller = require("../../core/controllers/usercontroller"), 
 	model = require("../../../lib/sourcegarden/riakmodel"),  

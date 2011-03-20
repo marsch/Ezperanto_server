@@ -2,7 +2,7 @@ require("../lib/underscore/underscore");
 //require('log4js')(); 
 
 
-var express = require('../deps/express'),
+var express = require('express'),
     fs      = require('fs'),
     application;
     
@@ -108,10 +108,10 @@ application = function (specs) {
 		callback = callback || function () {};
 		httpApp = express.createServer();
 		//httpApp.use(express.logger()); 
-		httpApp.use(express.bodyDecoder());
-		httpApp.use(express.cookieDecoder());
-		httpApp.use(express.session({secret: config.session_secret})); 
-		httpApp.use(express.staticProvider(that.getApplicationRoot() + '/public'));
+		httpApp.use(express.bodyParser());
+		httpApp.use(express.cookieParser());
+		httpApp.use(express.session({secret: config.session_secret, cookie: { maxAge: 60000 }})); 
+		httpApp.use(express.static(that.getApplicationRoot() + '/public'));
 		httpApp.use(express.errorHandler({ showStack: true, dumpExceptions: true }));
 		httpApp.use(httpApp.router);  
 		

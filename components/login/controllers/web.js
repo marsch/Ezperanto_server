@@ -1,4 +1,4 @@
-var dust = require('../../../deps/dust'),
+var dust = require('dust'),
 	webcontroller = require("../../core/controllers/webcontroller"), 
 	_ = require("../../../lib/underscore/underscore"),
 	model = require("../../../lib/sourcegarden/riakmodel"), 
@@ -160,6 +160,7 @@ controller = function (spec) {
 						// or in this case the entire user object
 						req.user = user;
 						req.session.user_id = user._id; 
+					//	res.send("SUPER");
 						res.redirect('/');
 			        });
 				}

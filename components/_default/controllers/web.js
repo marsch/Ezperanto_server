@@ -1,4 +1,4 @@
-var dust = require('../../../deps/dust'),
+var dust = require('dust'),
 	webcontroller = require("../../core/controllers/webcontroller"),
 	_ = require("../../../lib/underscore/underscore"),
 	controller;
