@@ -1,9 +1,0 @@
-argv = ['/usr/local/bin/node-waf', 'configure', 'build']
-blddir = '/data/umcc_dev/umcc_workspace/core/server/deps/daemon.node/build'
-commands = {'dist': 0, 'configure': True, 'distcheck': 0, 'install': 0, 'build': True, 'clean': 0, 'distclean': 0, 'check': 0, 'uninstall': 0}
-cwd = '/data/umcc_dev/umcc_workspace/core/server/deps/daemon.node'
-environ = {'SSH_CLIENT': '192.168.185.1 50038 22', 'LOGNAME': 'root', 'USER': 'root', 'HOME': '/root', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'PS1': '\\h:\\w\\$ ', '_': '/usr/local/bin/node-waf', 'LANG': 'de_DE.UTF-8', 'TERM': 'xterm-color', 'SHELL': '/bin/bash', 'SHLVL': '1', 'SSH_TTY': '/dev/pts/0', 'OLDPWD': '/data/umcc_dev/umcc_workspace/core/server/deps', 'PWD': '/data/umcc_dev/umcc_workspace/core/server/deps/daemon.node', 'MAIL': '/var/mail/root', 'SSH_CONNECTION': '192.168.185.1 50038 192.168.185.129 22'}
-files = []
-hash = 0
-options = {'compile_targets': None, 'force': False, 'verbose': 0, 'nocache': False, 'progress_bar': 0, 'destdir': '', 'keep': False, 'zones': '', 'blddir': '', 'prefix': '/usr/local/', 'jobs': 1, 'srcdir': '', 'check_cxx_compiler': 'g++ icpc sunc++'}
-srcdir = '/data/umcc_dev/umcc_workspace/core/server/deps/daemon.node'
