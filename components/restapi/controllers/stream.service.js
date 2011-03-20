@@ -30,7 +30,7 @@ controller = function (spec) {
 	 * 
 	 */
 	that.publishToStream = function (req, res) {
-		var post = {};
+		/*var post = {};
 		post.id = uuid.uuid();
 		post.from = {id: req.access_token.user, name: "Hanstester"};
 		post.to = {data: [{id: uuid.uuid(), name: "Entity name", type: "?human, entities blah"}]};
@@ -48,7 +48,7 @@ controller = function (spec) {
 		post.created_time = new Date().getTime();
 		post.updated_time = new Date().getTime();
 		post.targeting = {}; //string that defines the targeting of that post
-		console.log(req.params);
+		console.log(req.params);*/
 		res.send(post);
 	};
 	
