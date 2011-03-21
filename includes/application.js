@@ -1,9 +1,6 @@
 require("../lib/underscore/underscore");
 //require('log4js')(); 
 
-require.paths.push('../deps/');
-require.paths.push('../deps/connect/support');
-require.paths.push('../deps/connect/middleware');
 
 console.log(require.paths); 
 

@@ -22,3 +22,12 @@
 [submodule "deps/slide"]
 	path = deps/slide
 	url = https://github.com/isaacs/slide-flow-control.git
+[submodule "deps/node-expat"]
+	path = deps/node-expat
+	url = git://github.com/astro/node-expat.git
+[submodule "deps/xml2js-expat"]
+	path = deps/xml2js-expat
+	url = https://github.com/maqr/node-xml2js.git
+[submodule "deps/sax"]
+	path = deps/sax
+	url = https://github.com/isaacs/sax-js.git

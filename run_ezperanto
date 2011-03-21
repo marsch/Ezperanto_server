@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-var path = require("path");
-
+var path = require("path"); 
 require.paths.push((__dirname+"/deps/"));
 require.paths.push((__dirname+"/deps/connect/support/"));
 require.paths.push((__dirname+"/deps/connect/middleware/")); 
@@ -61,7 +60,7 @@ applications['cucm'] = require('../../applications/cucmconnector/includes/applic
 applications['server'].bootstrap(function (){
 	applications['oxconnector'].bootstrap( function () {
 		applications['cucm'] .bootstrap( function() {
-			var vhost_server = connect.createServer(connect.logger(), applications['server'].getAppHost(), applications['oxconnector'].getAppHost(), applications['cucm'].getAppHost()); 
+			var vhost_server = connect.createServer(connect.logger(), applications['server'].getAppHost()/*, applications['oxconnector'].getAppHost(), applications['cucm'].getAppHost()*/); 
 			vhost_server.listen(80);
 			//cli.proceed({server: vhost_server, port:80,host:"0.0.0.0",worker:1,master_log_file:"/var/log/umcc_log"}); 
 		});
