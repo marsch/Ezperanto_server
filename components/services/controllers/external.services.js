@@ -36,7 +36,7 @@ controller = function (spec) {
 				client.perform(endpoint + qstring, "GET", function (result) {
 					try {
 						res.send(JSON.parse(result.response.body));
-					} catch (e) {
+					} catch (e) { 
 						res.send(e);
 					}
 				});

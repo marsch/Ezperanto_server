@@ -49,7 +49,7 @@ controller = function (spec) {
 						req.access_token = access_token;
 						req.access_token.user = user;
 						
-						
+						console.log(req);
 						return next();
 					});
 
@@ -66,13 +66,21 @@ controller = function (spec) {
 	    if (req.access_token.isValid) {
 	        if (hasSufficientScope(scope, req.access_token)) { 
 	        	if (get_token) {
-	        		res.send({result: req.access_token});
+		
+					console.log("HERE");
+	        		return res.send({result: req.access_token});
 	        	} else {
-		            res.send({result: true}); 
+		
+					console.log("HERE");
+		           return  res.send({result: true}); 
 	        	}
 	        }
-	    }
-	    res.send({result: false});
+	    } 
+		return res.send({result: false});
+		
+		
+		console.log("THERE");
+	    
 	};
 	
 	that.bootstrap = function () {

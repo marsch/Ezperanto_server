@@ -1,14 +1,22 @@
 #!/usr/bin/env node
 
-var connect = require('./deps/connect'), 
+var path = require("path");
+
+require.paths.push((__dirname+"/deps/"));
+require.paths.push((__dirname+"/deps/connect/support/"));
+require.paths.push((__dirname+"/deps/connect/middleware/")); 
+ 
+
+console.log(require.paths);
+
+var connect = require('connect'), 
 	cli = require('./includes/umcc_cli'),
-	daemon = require('./deps/daemon'),
+	daemon = require('daemon'),
 	fs = require('fs');
 	
 //Needed for monit/upstart
 //Change directory into the script directory so includes resolve
 process.chdir(__dirname);
-
 
 
 var config = require('./etc/config');
@@ -41,8 +49,11 @@ switch(args[2]) {
 
 
 //DAEMON CODE
+
+
 console.log = function () {};
-global.applications = [];
+global.applications = []; 
+
 applications['server'] = require('./includes/application');
 applications['oxconnector'] = require('../../applications/oxconnector/includes/application');
 applications['cucm'] = require('../../applications/cucmconnector/includes/application');

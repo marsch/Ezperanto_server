@@ -55,7 +55,9 @@ oauthmodel = function (spec) {
 		var token;
 		user_id = user_id || null;
 		callback = callback || function () {};
-		
+		console.log("CREATE WITH SCOPE:::");
+		console.log(scope);
+		console.log("---------------------");
 		token = { 
 		        _id : uuid.uuid(),
 		        client_id: client_id,
@@ -114,8 +116,8 @@ oauthmodel = function (spec) {
 	};
 	that.save_user = function (user, callback) {
 		model.bucket('users').saveItem(user, callback);
-	}
-	
+	};
+		
 	return that;
 };
 exports = module.exports = oauthmodel({
