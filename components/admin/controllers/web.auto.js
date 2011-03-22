@@ -66,11 +66,13 @@ controller = function (spec) {
 		});
 	};
 	
-	that.sendConfigurationMessage = function (message, app, callback) {
-		//var client = http.createClient(80, 'www.example.com'); // to access this url i need to put basic auth.
+	that.sendConfigurationMessage = function (message, app, callback) { 
 		var encodedMessage = sigReq.encode(message, app.application_secret),
-			address = url.parse(app.config_uri),
-			client = http.createClient(address.port, address.hostname),
+			address = url.parse(app.config_uri);
+		
+		address.port = address.port || 80; //set the default port TODO: read out of the config-file
+			
+		var	client = http.createClient(address.port, address.hostname),
 			request;
 		
 		request = client.request("PUT", address.pathname, {'host': address.hostname});
