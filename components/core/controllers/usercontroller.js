@@ -10,6 +10,8 @@ controller = function (spec) {
 	var that = _.clone(webcontroller); 
 	
 	that.restrictToLoggedInUser = function (req, res, next) {   
+		console.log("user????");
+		console.log(req.session);	
 		if (req.session.user_id) { 
 			if (req.session.user_id === "SUPERUSER") {
 				var user = {};

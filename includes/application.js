@@ -109,7 +109,6 @@ application = function (specs) {
 	that.bootstrap = function (callback) {
 		callback = callback || function () {};
 		httpApp = express.createServer();
-		//httpApp.use(express.logger()); 
 		httpApp.use(express.bodyParser());
 		httpApp.use(express.cookieParser());
 		httpApp.use(express.session({secret: config.session_secret, cookie: { maxAge: 60000 }})); 

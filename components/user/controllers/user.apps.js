@@ -16,8 +16,7 @@ controller = function (spec) {
 	};
 	
 	that.bootstrap = function () {  
-		usercontroller.bootstrap(); //call parent  
-		
+		usercontroller.bootstrap(); //call parent
 		applications['server'].getHttpApp().get("/user/apps", that.common, that.showUserAppsPage);
 		applications['server'].getHttpApp().get("/user/apps/myapps/search", that.common, that.getUsersApps);
 		applications['server'].getHttpApp().get("/user/apps/myapps/show/:id", that.common, that.showUserApp); 

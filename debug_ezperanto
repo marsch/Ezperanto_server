@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+var path = require("path"); 
+require.paths.push((__dirname+"/deps/"));
+require.paths.push((__dirname+"/deps/connect/support/"));
+require.paths.push((__dirname+"/deps/connect/middleware/")); 
+ 
+
+console.log(require.paths);
+
+var connect = require('connect'), 
+  cli = require('./includes/umcc_cli'),
+  daemon = require('daemon'),
+  fs = require('fs');
+  
+
+
+var config = require('./etc/config');
+
+console.log = function () {};
+global.applications = []; 
+
+applications['server'] = require('./includes/application');
+applications['oxconnector'] = require('../../applications/oxconnector/includes/application');
+applications['cucm'] = require('../../applications/cucmconnector/includes/application');
+
+applications['server'].bootstrap(function (){
+  applications['oxconnector'].bootstrap( function () {
+    applications['cucm'] .bootstrap( function() {
+      var vhost_server = connect.createServer(
+	applications['server'].getAppHost(), 
+	applications['oxconnector'].getAppHost(), 
+	applications['cucm'].getAppHost()); 
+      vhost_server.listen(80);
+      //cli.proceed({server: vhost_server, port:80,host:"0.0.0.0",worker:1,master_log_file:"/var/log/umcc_log"}); 
+    });
+  });
+});
+ 
+ 
+
+
+//cli.proceed({server: vhost_server, port:80,host:"0.0.0.0",worker:1,master_log_file:"/var/log/umcc_log"});
